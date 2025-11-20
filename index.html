@@ -5,40 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sky Wall | Фотозоны, вывески, монтаж и сайты</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- Header -->
   <header class="header">
-  <div class="container">
-    <div class="logo">
-      <a href="index.html">
-        <h1>Sky<span>Wall</span></h1>
-      </a>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <h1>Sky<span>Wall</span></h1>
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="photozones.html">Фотозоны</a>
+        <a href="signs.html">Вывески</a>
+        <a href="repair.html">Ремонт</a>
+        <a href="websites.html">Сайты</a>
+        <a href="calculator.html">Калькулятор</a>
+        <a href="contact.html">Контакты</a>
+      </nav>
+      <div class="menu-toggle">☰</div>
     </div>
-    <nav class="nav">
-      <a href="index.html">Главная</a>
-      <a href="photozones.html">Фотозоны</a>
-      <a href="signs.html">Вывески</a>
-      <a href="repair.html">Ремонт</a>
-      <a href="websites.html">Сайты</a>
-      <a href="calculator.html">Калькулятор</a>
-      <a href="contact.html">Контакты</a>
-    </nav>
-    <div class="menu-toggle">☰</div>
-  </div>
-</header>
+  </header>
 
-<!-- Мобильное меню -->
-<div class="mobile-menu">
-  <a href="index.html">Главная</a>
-  <a href="photozones.html">Фотозоны</a>
-  <a href="signs.html">Вывески</a>
-  <a href="repair.html">Ремонт</a>
-  <a href="websites.html">Сайты</a>
-  <a href="calculator.html">Калькулятор</a>
-  <a href="contact.html">Контакты</a>
-</div>
+  <!-- Мобильное меню -->
+  <div class="mobile-menu">
+    <a href="index.html">Главная</a>
+    <a href="photozones.html">Фотозоны</a>
+    <a href="signs.html">Вывески</a>
+    <a href="repair.html">Ремонт</a>
+    <a href="websites.html">Сайты</a>
+    <a href="calculator.html">Калькулятор</a>
+    <a href="contact.html">Контакты</a>
+  </div>
 
   <!-- Hero -->
   <div class="hero">
@@ -55,22 +56,22 @@
       <h2 class="section-title">Наши услуги</h2>
       <div class="grid">
         <a href="photozones.html" class="card glass">
-          <img src="../static/images/photozone.jpg" alt="Фотозоны" class="service-img">
+          <img src="images/photozone.jpg" alt="Фотозоны" class="service-img">
           <h3>Фотозоны</h3>
           <p>Аренда и монтаж press wall, баннеров, 3D-зон</p>
         </a>
         <a href="signs.html" class="card glass">
-          <img src="../static/images/sign.jpg" alt="Вывески" class="service-img">
+          <img src="images/sign.jpg" alt="Вывески" class="service-img">
           <h3>Вывески</h3>
           <p>Световые, неоновые, объемные буквы</p>
         </a>
         <a href="repair.html" class="card glass">
-          <img src="../static/images/repair.jpg" alt="Ремонт" class="service-img">
+          <img src="images/repair.jpg" alt="Ремонт" class="service-img">
           <h3>Ремонт</h3>
           <p>Быстрое восстановление конструкций</p>
         </a>
         <a href="websites.html" class="card glass">
-          <img src="../static/images/website.jpg" alt="Сайты" class="service-img">
+          <img src="images/website.jpg" alt="Сайты" class="service-img">
           <h3>Создание сайтов</h3>
           <p>Профессиональные сайты под ключ</p>
         </a>
@@ -103,131 +104,62 @@
     </div>
   </section>
 
-  <!-- Примеры работ -->
+  <!-- Примеры работ с лайтбоксом -->
   <section class="examples">
-  <div class="container">
-    <h2 class="section-title">Примеры наших работ</h2>
-    <div class="gallery-grid">
-      <img src="../static/images/work1.jpg" alt="Работа 1" onclick="openLightbox(this)">
-      <img src="../static/images/work2.jpg" alt="Работа 2" onclick="openLightbox(this)">
-      <img src="../static/images/work3.jpg" alt="Работа 3" onclick="openLightbox(this)">
-      <!-- Добавь сколько угодно -->
+    <div class="container">
+      <h2 class="section-title">Примеры наших работ</h2>
+      <div class="gallery-grid">
+        <img src="images/work1.jpg" alt="Работа 1" onclick="openLightbox(this)">
+        <img src="images/work2.jpg" alt="Работа 2" onclick="openLightbox(this)">
+        <img src="images/work3.jpg" alt="Работа 3" onclick="openLightbox(this)">
+      </div>
     </div>
+  </section>
+
+  <!-- Лайтбокс -->
+  <div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="">
   </div>
-</section>
-
-<!-- Лайтбокс -->
-<div id="lightbox" onclick="this.style.display='none'">
-  <img id="lightbox-img">
-</div>
-
-<style>
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-.gallery-grid img {
-  width: 100%;
-  border-radius: 16px;
-  cursor: zoom-in;
-  transition: 0.3s;
-}
-.gallery-grid img:hover { transform: scale(1.03); }
-
-#lightbox {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.95);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-#lightbox-img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 16px;
-}
-</style>
-
-<script>
-function openLightbox(img) {
-  document.getElementById('lightbox').style.display = 'flex';
-  document.getElementById('lightbox-img').src = img.src;
-}
-</script>
 
   <!-- Footer -->
   <footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h3>Sky Wall</h3>
-        <p>Профессиональный монтаж фотозон, пресс-воллов, световых вывесок и создание сайтов под ключ.<br>Работаем по всей России с 2016 года.</p>
-        <p><strong>Молодая команда профессионалов</strong></p>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Sky Wall</h3>
+          <p>Профессиональный монтаж фотозон, пресс-воллов, световых вывесок и создание сайтов под ключ.<br>Работаем по всей России с 2016 года.</p>
+          <p><strong>Молодая команда профессионалов</strong></p>
+        </div>
+        <div class="footer-col">
+          <h4>Услуги</h4>
+          <a href="photozones.html">Аренда фотозон</a>
+          <a href="signs.html">Изготовление вывесок</a>
+          <a href="repair.html">Ремонт и обслуживание</a>
+          <a href="websites.html">Создание сайтов</a>
+          <a href="calculator.html">Калькулятор стоимости</a>
+        </div>
+        <div class="footer-col">
+          <h4>Контакты</h4>
+          <p>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
+          <p>Email: <a href="mailto:info@skywall.ru">info@skywall.ru</a></p>
+          <p>График: Круглосуточно (монтаж/демонтаж)</p>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Услуги</h4>
-        <a href="photozones.html">Аренда фотозон</a>
-        <a href="signs.html">Изготовление вывесок</a>
-        <a href="repair.html">Ремонт и обслуживание</a>
-        <a href="websites.html">Создание сайтов</a>
-        <a href="calculator.html">Калькулятор стоимости</a>
-      </div>
-      <div class="footer-col">
-        <h4>Контакты</h4>
-        <p>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
-        <p>Email: <a href="mailto:info@skywall.ru">info@skywall.ru</a></p>
-        <p>График: Круглосуточно (монтаж/демонтаж)</p>
+      <div class="footer-bottom">
+        <p>© 2025 Sky Wall. Все права защищены.</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Sky Wall. Все права защищены.</p>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script src="../static/js/main.js"></script>
+  <!-- JS -->
+  <script src="main.js"></script>
 
-  <script src="../static/js/main.js"></script>
+  <!-- Лайтбокс -->
   <script>
-    // Простая замена include (для локального запуска)
-    function includeHTML() {
-      var z, i, elmnt, file, xhttp;
-      z = document.querySelectorAll("[w3-include-html]");
-      for (i = 0; i < z.length; i++) {
-        elmnt = z[i];
-        file = elmnt.getAttribute("w3-include-html");
-        if (file) {
-          xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-              elmnt.innerHTML = this.responseText;
-              elmnt.removeAttribute("w3-include-html");
-              includeHTML();
-            }
-          }
-          xhttp.open("GET", file, true);
-          xhttp.send();
-        }
-      }
+    function openLightbox(el) {
+      document.getElementById('lightbox').style.display = 'flex';
+      document.getElementById('lightbox-img').src = el.src;
     }
-    includeHTML();
   </script>
-  <script src="//code.jivo.ru/widget/WHIENAopiF" async></script>
-  <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105424643', 'ym');
-
-    ym(105424643, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/105424643" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 </body>
 </html>
