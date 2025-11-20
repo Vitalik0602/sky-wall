@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Калькулятор стоимости — Sky Wall</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/style.css" />
+</head>
+<body>
+  <!-- Header и мобильное меню (вставь из предыдущих сообщений) -->
+
+  <div class="page-hero" style="background: linear-gradient(135deg, #001a11, #0a0a0a);">
+    <div class="container">
+      <h1>Калькулятор стоимости</h1>
+      <p class="calc-result">Выберите услугу — увидите цену мгновенно</p>
+    </div>
+  </div>
+
+  <section class="container">
+    <div class="calculator glass" style="max-width: 600px;">
+      <div class="calc-display" id="result-display">0 ₽</div>
+
+      <div style="margin-bottom: 20px;">
+        <select id="service-select" class="input-neon select-neon" style="width:100%">
+          <option value="0" selected disabled>Выберите услугу</option>
+          <option value="8000">Sky Light — от 8 000 ₽</option>
+          <option value="10000">Sky Wood — от 10 000 ₽</option>
+          <option value="12000">Sky Double — от 12 000 ₽</option>
+          <option value="25000">Sky Wood 3D — от 25 000 ₽</option>
+          <option value="30000">Bullet-Time — от 30 000 ₽</option>
+          <option value="20000">Sky Wood Frame — от 20 000 ₽</option>
+          <option value="50000">Создание сайта — от 50 000 ₽</option>
+        </select>
+
+        <select id="package-select" class="input-neon select-neon" style="width:100%; margin-top:12px">
+          <option value="1">Пакет "Полный"</option>
+          <option value="1.5">Пакет "Под ключ" (+50%)</option>
+          <option value="2">Индивидуальный (×2)</option>
+        </select>
+      </div>
+
+      <button onclick="calculatePrice()" class="btn-submit">Рассчитать</button>
+    </div>
+
+    <div class="form-glass" style="margin-top: 40px;">
+      <h3>Точный расчёт от менеджера</h3>
+      <form data-service="Калькулятор">
+        <input type="text" name="name" class="input-neon" placeholder="Имя" required>
+        <input type="tel" name="phone" class="input-neon" placeholder="Телефон" required>
+        <textarea name="message" class="input-neon" rows="3" placeholder="Услуга, размер, дата"></textarea>
+        <button type="submit" class="btn-submit">Заказать расчёт</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+
+  <script src="../static/js/main.js"></script>
+  <script>
+    function calculatePrice() {
+      const base = parseInt(document.getElementById('service-select').value) || 0;
+      const multiplier = parseFloat(document.getElementById('package-select').value) || 1;
+      const total = base * multiplier;
+      document.getElementById('result-display').textContent = total.toLocaleString('ru') + ' ₽';
+    }
+  </script>
+  <script src="//code.jivo.ru/widget/WHIENAopiF" async></script>
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105424643', 'ym');
+
+    ym(105424643, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/105424643" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>
